@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { poppins } from "./styles/fonts";
-import "./styles/globals.css";
+import { poppins } from "@/styles/fonts";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Timbu Cloud Shop",

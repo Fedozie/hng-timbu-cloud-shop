@@ -5,6 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -15,6 +16,7 @@ const config: Config = {
         "heading-4": ["1.5rem", { lineHeight: "150%", fontWeight: 500 }],
         "heading-5": ["1.25rem", { lineHeight: "140%", fontWeight: 500 }],
         "heading-6": ["1rem", { lineHeight: "175%", fontWeight: 500 }],
+        "paragraph": ["1rem", { lineHeight: "100%", fontWeight: 400 }]
       }
     },
   },

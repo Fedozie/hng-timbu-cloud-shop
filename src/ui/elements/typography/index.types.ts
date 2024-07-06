@@ -20,4 +20,5 @@ export interface TypographyProps extends React.HTMLAttributes<HTMLOrSVGElement>{
   children?: React.ReactNode;
   variant?: TypographyVariant;
   align?: TypographyAlign;
+  customClassName?: string;
 }
