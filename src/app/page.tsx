@@ -1,9 +1,8 @@
-import Image from "next/image";
-import { Typography } from "../ui";
+import { Typography, Button } from "../ui";
 
 export default function Home() {
   return (
-    <main className=" min-h-screen">
+    <main className="min-h-screen">
       
     </main>
   );

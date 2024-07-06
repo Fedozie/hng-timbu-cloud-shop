@@ -17,6 +17,23 @@ const config: Config = {
         "heading-5": ["1.25rem", { lineHeight: "140%", fontWeight: 500 }],
         "heading-6": ["1rem", { lineHeight: "175%", fontWeight: 500 }],
         "paragraph": ["1rem", { lineHeight: "100%", fontWeight: 400 }]
+      },
+      colors: {
+        primary: {
+          
+          50: "#EAF1FF",
+          100: "#BDD3FF",
+          200: "#9DBEFF",
+          300: "#70A1FF",
+          400: "#548EFF",
+          500: "#2972FF",
+          600: "#2568E8",
+          700: "#1D51B5",
+          800: "#173F8C",
+          900: "#11306B",
+        },
+        black: '#000000',
+        white: "#FAFAFA"
       }
     },
   },
