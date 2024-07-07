@@ -3,8 +3,8 @@ import { ButtonProps } from "./index.types";
 import { cva } from "class-variance-authority";
 import clsx from "clsx";
 
-
-const button = cva("", {
+// Define button styles with cva
+const button = cva("flex justify-center items-center py-[0.75rem] text-center cursor-pointer", {
   variants: {
     variant: {
       primary: "bg-primary-500 border-0 px-4 rounded-lg",
@@ -16,10 +16,10 @@ const button = cva("", {
     }
   },
   compoundVariants: []
-})
+});
 
+// Button component
 const Button: React.FC<ButtonProps> = (props) => {
-
   const {
     variant,
     color = "primary",
@@ -31,24 +31,26 @@ const Button: React.FC<ButtonProps> = (props) => {
     ...rest
   } = props;
 
-  const className = clsx("flex justify-content items-center py-[0.75rem] text-center cursor-pointer",)
+  // Combine base styles with custom styles
+  const className = clsx(
+    button({
+      variant,
+      color
+    }),
+    customClassName
+  );
 
-  return(
+  return (
     <button
-      type = {buttonType}
-      className={button({
-        className,
-        variant,
-        color
-      })}
+      type={buttonType}
+      className={className}
       {...rest}
     >
-      {leftIcon && <span >{leftIcon}</span>}
+      {leftIcon && <span className="mr-2">{leftIcon}</span>}
       {label}
-      {rightIcon && <span >{rightIcon}</span>}
+      {rightIcon && <span className="ml-2">{rightIcon}</span>}
     </button>
-  )
-
+  );
 };
 
 export { Button };

@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Header/>
-        {children}
-        <Footer/>
+        <section className="relative overflow-auto">
+          <Header />
+          {children}
+          <Footer />
+        </section>
       </body>
     </html>
   );

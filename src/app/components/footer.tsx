@@ -4,8 +4,6 @@ import { Typography, Button } from "@/src/ui";
 import Facebook from "@/public/assets/facebook.svg";
 import Instagram from "@/public/assets/Instagram.svg";
 import Twitter from "@/public/assets/twitter.svg";
-import Appstore from "@/public/assets/appstore.svg";
-import Playstore from "@/public/assets/playstore.svg";
 
 const unoLinks = [
   "Accessibility Statement",
@@ -37,15 +35,15 @@ const trioLinks = [
 const socials = [<Twitter />, <Facebook />, <Instagram />];
 
 const ctaBtns = [
-  { heading: "Get it on", text: "Google Play", icon: <Appstore /> },
-  { heading: "Download on the", text: "App Store", icon: <Playstore /> },
+  { heading: "Get it on", text: "Google Play" },
+  { heading: "Download on the", text: "App Store" },
 ];
 
 const legalLinks = ["Terms and Conditions", "Policy", "Privacy", "Order"];
 
 const Footer = () => {
   return (
-    <section className="h-auto">
+    <section className="w-full h-auto relative">
       <div className="bg-primary-500 p-10 flex items-center justify-between">
         <div>
           <Typography variant="h4" color="white">
@@ -145,7 +143,6 @@ const Footer = () => {
                 className="w-40 h-14 bg-black rounded-md text-white flex p-2 my-4"
                 key={index}
               >
-                {btn.icon}
                 <div>
                   <p className="font-thin text-xs">{btn.heading}</p>
                   <p className="font-medium text-base">{btn.text}</p>
@@ -158,13 +155,13 @@ const Footer = () => {
       </div>
 
       <div className="p-10">
-        <div className="border-t-2"></div>
+        <div className="border-t-2 bg-slate-800"></div>
       </div>
 
       <div className="p-10  flex justify-between items-center">
         <ul className="flex">
-          {legalLinks.map((legalLink) => (
-            <li className="mr-4 cursor-pointer">{legalLink}</li>
+          {legalLinks.map((legalLink, index) => (
+            <li className="mr-4 cursor-pointer" key={index}>{legalLink}</li>
           ))}
         </ul>
         <p>© Copyright 2024, All Rights Reserved by Timbu Cloud Shop</p>
