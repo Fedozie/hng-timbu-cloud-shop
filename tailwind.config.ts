@@ -31,10 +31,22 @@ const config: Config = {
           700: "#1D51B5",
           800: "#173F8C",
           900: "#11306B",
+          950: "#1E293B"
         },
         black: '#000000',
         white: "#FAFAFA"
-      }
+      },
+      fontWeight: {
+        thin: "100",
+        "extra-light": "200",
+        light: "300",
+        regular: "400",
+        medium: "500",
+        "semi-bold": "600",
+        bold: "700",
+        "extra-bold": "800",
+        black: "900",
+      },
     },
   },
   plugins: [],
