@@ -48,3 +48,4 @@ const ProductCard = ({ title, price, image }: CardProps) => {
 };
 
 export default ProductCard;
+

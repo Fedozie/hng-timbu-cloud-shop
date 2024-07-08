@@ -86,7 +86,7 @@ const cardData = [
 const ProductsSections = () => {
   return (
     <section className="bg-white w-full p-10">
-      <div className="w-full pb-4 sm:flex sm:justify-between">
+      <div className="w-full pb-4 flex flex-col sm:flex-row sm:justify-between">
         {texts.map((text, index) => (
           <div className="" key={index}>
             <span>{text} </span>
