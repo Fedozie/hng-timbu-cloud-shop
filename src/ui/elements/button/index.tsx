@@ -8,7 +8,8 @@ const button = cva("flex justify-center items-center py-[0.75rem] text-center cu
   variants: {
     variant: {
       primary: "bg-primary-500 border-0 px-4 rounded-lg",
-      secondary: "bg-transparent border-0 px-4"
+      secondary: "bg-transparent border-0 px-4",
+      disabled: "bg-primary-300 border-0 px-4 rounded-lg"
     },
     color: {
       primary: "text-white",

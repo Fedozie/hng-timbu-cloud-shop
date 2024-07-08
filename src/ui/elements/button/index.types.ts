@@ -1,6 +1,7 @@
 export enum ButtonVariants {
   primary = 'primary',
-  secondary = 'secondary'
+  secondary = 'secondary',
+  disabled = 'disabled'
 }
 
 export type ButtonColors = "primary" | "secondary";
