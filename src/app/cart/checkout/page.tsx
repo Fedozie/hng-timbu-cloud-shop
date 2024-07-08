@@ -80,7 +80,7 @@ const Checkout = () => {
           </Typography>
         </div>
 
-        <div className="w-full flex justify-between gap-6">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-6">
           <div className="flex-grow">
             <Typography variant="h4" customClassName="mb-4">Billing Details</Typography>
             <div>
@@ -94,7 +94,7 @@ const Checkout = () => {
               ))}
             </div>
           </div>
-          <div className="w-[40%]">
+          <div className="w-full md:w-[40%]">
             <div className="w-full h-full border-2 border-primary-300 rounded-lg p-4">
               <Typography variant="h4">Order Summary</Typography>
               <div className="mx-2">
@@ -123,7 +123,7 @@ const Checkout = () => {
                   </div>
                 ))}
               </div>
-              <div>
+              <div className="mx-2">
                 <div className="flex justify-between items-center my-4">
                   <Typography customClassName="text-stone-500">
                     Sub-Total

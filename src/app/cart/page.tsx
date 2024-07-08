@@ -53,7 +53,7 @@ const Cart = () => {
           </button>
           <span className="">{row.quantity}</span>
           <button
-            onClick={() => alert(`Decrementing quantity for ${row.name}`)}
+            onClick={() => alert(`Incrementing quantity for ${row.name}`)}
             className="w-4 h-4 bg-primary-500 text-white p-1 rounded flex justify-center items-center"
           >
             +
@@ -108,7 +108,7 @@ const Cart = () => {
   ];
 
   return (
-    <section className="w-full p-10">
+    <section className="w-full p-10 overflow-hidden">
       <div>
         <Typography
           variant="h6"
@@ -123,11 +123,11 @@ const Cart = () => {
         <div></div>
       </div>
 
-      <div className="w-full flex justify-between items-start">
-        <div className="flex-grow">
+      <div className="w-full  flex flex-col lg:flex-row lg:justify-between lg:items-start">
+        <div className="overflow-x-scroll mb-4 lg:flex-grow lg:mb-4">
           <Table data={data} columns={columns} />
         </div>
-        <div className="w-[25%] ml-10">
+        <div className="w-full lg:w-[30%] lg:ml-10">
           <div className="w-full border-2 border-primary-600 p-4 rounded-lg">
             <Typography variant="h5">Order Summary</Typography>
             <div className="flex justify-between items-center my-4">
@@ -143,7 +143,7 @@ const Cart = () => {
               <Typography color="primary-600">₦83,300</Typography>
             </div>
             <div className="border-t-2 my-4"></div>
-            <div className="flex justify-between items-center gap-2">
+            <div className="w-full flex justify-between items-center gap-2">
               <input
                 type="text"
                 placeholder="Coupon Code"

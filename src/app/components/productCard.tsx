@@ -10,7 +10,7 @@ interface CardProps {
 
 const ProductCard = ({ title, price, image }: CardProps) => {
   return (
-    <div className="w-72">
+    <div className="w-full lg:w-72">
       <div className="border rounded-md border-primary-100">
         <div className="relative w-full h-72">
           <Image src={image} alt="Product Image" layout="fill" objectFit="cover" />
