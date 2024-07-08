@@ -44,28 +44,28 @@ const legalLinks = ["Terms and Conditions", "Policy", "Privacy", "Order"];
 const Footer = () => {
   return (
     <section className="w-full h-auto relative">
-      <div className="bg-primary-500 p-10 flex items-center justify-between">
+      <div className="bg-primary-500 p-10 flex flex-col justify-start items-start gap-4 lg:flex-row lg:items-center lg:justify-between ">
         <div>
           <Typography variant="h4" color="white">
             Subscribe to our newsletter to get updates on our latest offers!
           </Typography>
         </div>
-        <div className="w-[30%] flex justify-between items-center">
+        <div className="w-full lg:w-[30%] flex flex-col lg:flex-row gap-4 lg:justify-between lg:items-center">
           <input
             type="text"
             name=""
             id=""
             placeholder="Enter your Email Address"
-            className="py-2 px-6 rounded-lg grow"
+            className="py-2 px-6 rounded-lg lg:grow w-full"
           />
-          <button className="bg-[#FFBABA] py-2 px-4 rounded-lg ml-4">
+          <button className="bg-[#FFBABA] py-2 px-4 rounded-lg lg:ml-4">
             Subscribe
           </button>
         </div>
       </div>
 
-      <div className="w-full p-10 flex justify-between">
-        <div className="w-[60%] flex justify-between items-start">
+      <div className="w-full p-10 flex flex-col lg:flex-row lg:justify-between">
+        <div className="w-full flex justify-start gap-8 mb-4 lg:w-[60%] lg:justify-between lg:items-start lg:gap-0 lg:mb-0">
           <ul>
             <Typography
               variant="h5"
@@ -122,7 +122,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="w-[30%]">
+        <div className="w-full lg:w-[30%]">
           <div>
             <div className="mb-16">
               <Typography>Follow us on social media:</Typography>
@@ -158,7 +158,7 @@ const Footer = () => {
         <div className="border-t-2 bg-slate-800"></div>
       </div>
 
-      <div className="p-10  flex justify-between items-center">
+      <div className="p-10 flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center">
         <ul className="flex">
           {legalLinks.map((legalLink, index) => (
             <li className="mr-4 cursor-pointer" key={index}>{legalLink}</li>
