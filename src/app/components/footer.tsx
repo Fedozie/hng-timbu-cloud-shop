@@ -32,7 +32,11 @@ const trioLinks = [
   "After Service Sale",
 ];
 
-const socials = [<Twitter />, <Facebook />, <Instagram />];
+const socials = [
+  { component: <Twitter />, key: "twitter" },
+  { component: <Facebook />, key: "facebook" },
+  { component: <Instagram />, key: "instagram" },
+];
 
 const ctaBtns = [
   { heading: "Get it on", text: "Google Play" },
@@ -65,7 +69,7 @@ const Footer = () => {
       </div>
 
       <div className="w-full p-10 flex flex-col lg:flex-row lg:justify-between">
-        <div className="w-full flex justify-start gap-8 mb-4 lg:w-[60%] lg:justify-between lg:items-start lg:gap-0 lg:mb-0">
+        <div className="w-full flex flex-wrap justify-start gap-8 mb-4 lg:w-[60%] lg:justify-between lg:items-start lg:gap-0 lg:mb-0">
           <ul>
             <Typography
               variant="h5"
@@ -127,12 +131,12 @@ const Footer = () => {
             <div className="mb-16">
               <Typography>Follow us on social media:</Typography>
               <div className="flex justify-start mt-4">
-                {socials.map((social, index) => (
+                {socials.map((social) => (
                   <div
                     className="w-8 h-8 bg-primary-950 rounded-full flex justify-center items-center cursor-pointer mr-4"
-                    key={index}
+                    key={social.key}
                   >
-                    {social}
+                    {social.component}
                   </div>
                 ))}
               </div>
