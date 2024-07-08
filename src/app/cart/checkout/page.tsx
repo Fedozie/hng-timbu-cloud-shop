@@ -80,9 +80,23 @@ const Checkout = () => {
           </Typography>
         </div>
 
+        <div className="w-full flex items-center my-8">
+          <div className="h-1 flex-grow bg-primary-500 rounded-md"></div>
+          <div className="w-6 h-6 bg-primary-500 text-white mx-4 flex justify-center items-center rounded-full">
+            1
+          </div>
+          <div className="h-1 flex-grow bg-primary-500 rounded-md"></div>
+          <div className="w-6 h-6 bg-primary-500 text-white mx-4 flex justify-center items-center rounded-full">
+            2
+          </div>
+          <div className="h-1 flex-grow bg-primary-500 rounded-md"></div>
+        </div>
+
         <div className="w-full flex flex-col md:flex-row justify-between gap-6">
           <div className="flex-grow">
-            <Typography variant="h4" customClassName="mb-4">Billing Details</Typography>
+            <Typography variant="h4" customClassName="mb-4">
+              Billing Details
+            </Typography>
             <div>
               {inputs.map((input, index) => (
                 <Input
@@ -92,8 +106,36 @@ const Checkout = () => {
                   name={input.name}
                 />
               ))}
+              <div className="flex flex-col mb-6">
+                <div className="mb-2">
+                  <label htmlFor="number">Phone Number</label>
+                  <span className="ml-2 text-red-600">*</span>
+                </div>
+
+                <input
+                  type="number"
+                  id="number"
+                  className="block w-full rounded-lg border-2  bg-transparent p-4 placeholder:text-[#979797]"
+                  placeholder="114 3676734"
+                />
+              </div>
+              <div className="flex flex-col mb-8">
+                <div className="mb-2">
+                  <label htmlFor="area">Additional Information</label>
+                </div>
+                <Typography customClassName="mb-2">
+                  Order Notes{" "}
+                  <span className="inline text-[#979797]">(Optional)</span>{" "}
+                </Typography>
+
+                <textarea
+                  className="block w-full rounded-lg border-2  bg-transparent p-4 placeholder:text-[#979797]"
+                  placeholder="Note about your order, e.g. special note for delivery "
+                ></textarea>
+              </div>
             </div>
           </div>
+
           <div className="w-full md:w-[40%]">
             <div className="w-full h-full border-2 border-primary-300 rounded-lg p-4">
               <Typography variant="h4">Order Summary</Typography>

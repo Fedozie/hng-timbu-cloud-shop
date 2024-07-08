@@ -120,7 +120,13 @@ const Cart = () => {
         <Typography variant="h1" fontWeight="medium">
           Cart
         </Typography>
-        <div></div>
+        <div className="w-full flex items-center my-8">
+          <div className="h-1 flex-grow bg-primary-500 rounded-md"></div>
+          <div className = "w-6 h-6 bg-primary-500 text-white mx-4 flex justify-center items-center rounded-full">1</div>
+          <div className="h-1 flex-grow bg-zinc-500 rounded-md"></div>
+          <div className = "w-6 h-6 bg-zinc-500 text-white mx-4 flex justify-center items-center rounded-full">2</div>
+          <div className="h-1 flex-grow bg-zinc-500 rounded-md"></div>
+        </div>
       </div>
 
       <div className="w-full  flex flex-col lg:flex-row lg:justify-between lg:items-start">

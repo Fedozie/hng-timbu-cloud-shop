@@ -1,19 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Logo from "@/public/assets/Logo.png";
 import CartIcon from "@/public/assets/cartIcon.png";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(false);
+
 
   return (
     <header className="bg-white shadow-md overflow-hidden">
       <div className=" w-full px-10 py-4 flex flex-col gap-10 md:flex-row md:items-center md:justify-between ">
         <div className="flex items-center">
-          <Image src={Logo} alt="Logo" width={100} height={100} />
+          <Link href = "/">
+            <Image src={Logo} alt="Logo" width={100} height={100} />
+          </Link>
         </div>
 
         <div className="flex-grow oveerflow-scroll flex flex-col md:flex-row justify-between ">
