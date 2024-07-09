@@ -1,9 +1,11 @@
 "use client";
 
-import { Typography, Button } from "@/src/ui";
+import { Typography } from "@/src/ui";
 import Facebook from "@/public/assets/facebook.svg";
 import Instagram from "@/public/assets/Instagram.svg";
 import Twitter from "@/public/assets/twitter.svg";
+import Apple from "@/public/assets/apple-icon.svg";
+import Google from "@/public/assets/google-playstore.svg";
 
 const unoLinks = [
   "Accessibility Statement",
@@ -39,8 +41,18 @@ const socials = [
 ];
 
 const ctaBtns = [
-  { heading: "Get it on", text: "Google Play" },
-  { heading: "Download on the", text: "App Store" },
+  {
+    component: <Apple />,
+    heading: "Get it on",
+    text: "Google Play",
+    key: "apple",
+  },
+  {
+    component: <Google />,
+    heading: "Download on the",
+    text: "App Store",
+    key: "google",
+  },
 ];
 
 const legalLinks = ["Terms and Conditions", "Policy", "Privacy", "Order"];
@@ -142,14 +154,17 @@ const Footer = () => {
               </div>
             </div>
             <Typography>Download our app</Typography>
-            {ctaBtns.map((btn, index) => (
+            {ctaBtns.map((btn) => (
               <div
                 className="w-40 h-14 bg-black rounded-md text-white flex p-2 my-4"
-                key={index}
+                key={btn.key}
               >
-                <div>
-                  <p className="font-thin text-xs">{btn.heading}</p>
-                  <p className="font-medium text-base">{btn.text}</p>
+                <div className="flex items-center gap-2">
+                  {btn.component}
+                  <div>
+                    <p className="font-thin text-xs">{btn.heading}</p>
+                    <p className="font-medium text-base">{btn.text}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -165,7 +180,9 @@ const Footer = () => {
       <div className="p-10 flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center">
         <ul className="flex">
           {legalLinks.map((legalLink, index) => (
-            <li className="mr-4 cursor-pointer" key={index}>{legalLink}</li>
+            <li className="mr-4 cursor-pointer" key={index}>
+              {legalLink}
+            </li>
           ))}
         </ul>
         <p>© Copyright 2024, All Rights Reserved by Timbu Cloud Shop</p>

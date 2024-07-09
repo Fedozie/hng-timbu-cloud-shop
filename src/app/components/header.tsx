@@ -42,7 +42,7 @@ const Header = () => {
 
           <div className="relative my-2">
             <Link href="/cart">
-              <button className="bg-primary-500 text-white p-2 rounded-md flex justify-between items-center">
+              <button className="bg-primary-500 text-white p-2 rounded-md flex justify-between items-center hover:bg-primary-200">
                 <Image
                   src={CartIcon}
                   alt="cart"

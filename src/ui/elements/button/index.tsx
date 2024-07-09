@@ -7,7 +7,7 @@ import clsx from "clsx";
 const button = cva("flex justify-center items-center py-[0.75rem] text-center cursor-pointer", {
   variants: {
     variant: {
-      primary: "bg-primary-500 border-0 px-4 rounded-lg",
+      primary: "bg-primary-500 border-0 px-4 rounded-lg hover:bg-primary-200",
       secondary: "bg-transparent border-0 px-4",
       disabled: "bg-primary-300 border-0 px-4 rounded-lg"
     },

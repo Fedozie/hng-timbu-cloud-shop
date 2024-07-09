@@ -7,6 +7,7 @@ import iceImg from "@/public/assets/image-5.png";
 import genImg from "@/public/assets/image-10.png";
 import inverterImg from "@/public/assets/image-9.png";
 import blenderImg from "@/public/assets/image-3.png";
+import arrowImg from "@/public/assets/arrow.png";
 
 const Checkout = () => {
   const inputs = [
@@ -73,8 +74,16 @@ const Checkout = () => {
         >
           Home/Cart/Checkout
         </Typography>
-        <div className="flex justify-start">
-          <span></span>
+        <div className="flex justify-start items-center">
+          <Link href="/cart"> 
+            <Image
+              src={arrowImg}
+              alt = "Arrow Key"
+              width={30}
+              height={30}
+              className="mr-4"
+            />
+          </Link>
           <Typography variant="h1" fontWeight="medium">
             Checkout
           </Typography>
