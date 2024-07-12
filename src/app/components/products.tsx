@@ -1,4 +1,8 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Typography } from "@/src/ui";
+import { getAllProducts } from "../services/api"; 
 import ProductCard from "./productCard";
 import cardImg1 from "../../../public/assets/image-1.png";
 import cardImg2 from "../../../public/assets/image-2.png";
@@ -13,77 +17,101 @@ import cardImg10 from "../../../public/assets/image-10.png";
 import cardImg11 from "../../../public/assets/image-11.png";
 import cardImg12 from "../../../public/assets/image-12.png";
 
-const texts = [
-  "Convenient Checkout Process",
-  "Quick Customer Service",
-  "Product Quality",
-  "Fast Delivery",
-];
 
-const cardData = [
-  {
-    image: cardImg1,
-    title: "BRUHM BLACK AC BAS-09ICQB",
-    price: "₦298,490",
-  },
-  {
-    image: cardImg2,
-    title: "BRUHM LED BTF43SV SMART OS TV",
-    price: "₦3,298,490",
-  },
-  {
-    image: cardImg3,
-    title: "BINATONE BLENDER",
-    price: "₦48,990",
-  },
-  {
-    image: cardImg4,
-    title: "BRUHM BLACK REF BFQ-592EN ",
-    price: "₦1,421,290",
-  },
-  {
-    image: cardImg5,
-    title: "HISENSE 20KG ICE MAKER ICM2011",
-    price: "₦160,900",
-  },
-  {
-    image: cardImg6,
-    title: "HISENSE H04AfBK1S1 4.5L AIR FRYER",
-    price: "₦60,000",
-  },
-  {
-    image: cardImg7,
-    title: "LG F2V5FGPYJE 9/5KG FRONT LOAD",
-    price: "₦733,400",
-  },
-  {
-    image: cardImg8,
-    title: "HISENSE 100 INCH U7K SERIES ULED 4K",
-    price: "₦3,900,990",
-  },
-  {
-    image: cardImg9,
-    title: "HUAWEI -M 2.5kW POWER  INVERTER",
-    price: "₦4,182,900",
-  },
-  {
-    image: cardImg10,
-    title: "MAXI E17000KWH GENERATOR 21.25 KVA",
-    price: "₦3,597,900",
-  },
-  {
-    image: cardImg11,
-    title: "MAXI TOASTER 2 SLICES",
-    price: "₦28,400",
-  },
-  {
-    image: cardImg12,
-    title: "Jinko 625W Monofacial Solar Panel",
-    price: "₦184,800",
-  },
-];
 
 const ProductsSections = () => {
+  const texts = [
+    "Convenient Checkout Process",
+    "Quick Customer Service",
+    "Product Quality",
+    "Fast Delivery",
+  ];
+
+  const cardData = [
+    {
+      image: cardImg1,
+      title: "BRUHM BLACK AC BAS-09ICQB",
+      price: "₦298,490",
+    },
+    {
+      image: cardImg2,
+      title: "BRUHM LED BTF43SV SMART OS TV",
+      price: "₦3,298,490",
+    },
+    {
+      image: cardImg3,
+      title: "BINATONE BLENDER",
+      price: "₦48,990",
+    },
+    {
+      image: cardImg4,
+      title: "BRUHM BLACK REF BFQ-592EN ",
+      price: "₦1,421,290",
+    },
+    {
+      image: cardImg5,
+      title: "HISENSE 20KG ICE MAKER ICM2011",
+      price: "₦160,900",
+    },
+    {
+      image: cardImg6,
+      title: "HISENSE H04AfBK1S1 4.5L AIR FRYER",
+      price: "₦60,000",
+    },
+    {
+      image: cardImg7,
+      title: "LG F2V5FGPYJE 9/5KG FRONT LOAD",
+      price: "₦733,400",
+    },
+    {
+      image: cardImg8,
+      title: "HISENSE 100 INCH U7K SERIES ULED 4K",
+      price: "₦3,900,990",
+    },
+    {
+      image: cardImg9,
+      title: "HUAWEI -M 2.5kW POWER  INVERTER",
+      price: "₦4,182,900",
+    },
+    {
+      image: cardImg10,
+      title: "MAXI E17000KWH GENERATOR 21.25 KVA",
+      price: "₦3,597,900",
+    },
+    {
+      image: cardImg11,
+      title: "MAXI TOASTER 2 SLICES",
+      price: "₦28,400",
+    },
+    {
+      image: cardImg12,
+      title: "Jinko 625W Monofacial Solar Panel",
+      price: "₦184,800",
+    },
+  ];
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try{
+        const organization_id = "299d5d30ddfb491bb504018c375288a3";
+        const Appid = "TIG0IIEZE6OCHOT";
+        const Apikey = "d9473e02aa994baa82d27fdd64f582ca20240712124108402122";
+        const page = 2;
+        const size = 10;
+        
+        const productsRes = await getAllProducts(organization_id, Appid, Apikey, page, size, false)
+        console.log("Products fetched successfully:", products);
+        setProducts(productsRes)
+      }catch(error){
+        console.error("Failed to fetch products", error)
+      }
+    }
+  
+    fetchProducts()
+  }, [])
+
   return (
     <section className="bg-white w-full p-10">
       <div className="w-full pb-4 flex flex-col sm:flex-row sm:justify-between">
