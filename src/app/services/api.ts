@@ -1,27 +1,8 @@
-import axios, { AxiosResponse } from "axios";
+import axios, {AxiosResponse} from 'axios';
 
-const baseUrl = "https://api.timbu.cloud";
+// const baseUrl = "https://api.timbu.cloud";
 
-// export const getAllProducts = async(
-//   organization_id: string,
-//   Appid: string,
-//   Apikey: string,
-//   page: number,
-//   size: number,
-//   reverse_sort: boolean = false
-// ) => {
-//   const url = `${baseUrl}/products?organization_id=${organization_id}&reverse_sort=${reverse_sort}&page=${page}&size=${size}&Appid=${Appid}&Apikey=${Apikey}`;
-
-//   try{
-//     const response: AxiosResponse<any> = await axios.get(url)
-//     return response.data
-//   }catch(error){
-//     console.error("Error fetching products:", error);
-//     return [];
-//   }
-// }
-
-export const getAllProducts = async (
+export const getAllProducts = async(
   organization_id: string,
   Appid: string,
   Apikey: string,
@@ -29,15 +10,14 @@ export const getAllProducts = async (
   size: number,
   reverse_sort: boolean = false
 ) => {
-  const url = `${baseUrl}/products?organization_id=${organization_id}&reverse_sort=${reverse_sort}&page=${page}&size=${size}&Appid=${Appid}&Apikey=${Apikey}`;
+  const url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=${organization_id}&reverse_sort=${reverse_sort}&page=${page}&size=${size}&Appid=${Appid}&Apikey=${Apikey}`;
 
-  // const { data } = await axios({
-  //   method: "GET",
-  //   url,
-  // });
+  try{
+    const response: AxiosResponse<any> = await axios.get(url)
+    return response.data
+  }catch(error){
+    console.error("Error fetching products:", error);
+    return [];
+  }
+}
 
-  const res = await fetch(url);
-  const data = await res.json();
-
-  return data;
-};

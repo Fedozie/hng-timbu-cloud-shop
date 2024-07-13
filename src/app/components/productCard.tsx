@@ -4,16 +4,19 @@ import Image from "next/image";
 
 interface CardProps {
   title: string;
-  price: string;
+  price: number | null;
   image: any;
 }
 
+
+
 const ProductCard = ({ title, price, image }: CardProps) => {
+  
   return (
     <div className="w-full lg:w-72">
       <div className="border rounded-md border-primary-100">
         <div className="relative w-full h-72">
-          <Image src={image} alt="Product Image" layout="fill" objectFit="cover" />
+          <Image src={image} alt="Product Image" layout="fill" objectFit="cover" unoptimized  />
         </div>
       </div>
       <div>
@@ -31,7 +34,7 @@ const ProductCard = ({ title, price, image }: CardProps) => {
           align="left"
           customClassName="font-bold"
         >
-          {price}
+          ₦{price}
         </Typography>
       </div>
       <div>
