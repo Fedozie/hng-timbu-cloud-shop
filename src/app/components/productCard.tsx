@@ -1,5 +1,4 @@
 import { Typography, Button } from "@/src/ui";
-import CartIcon from "@/public/assets/cartIcon.svg";
 import Image from "next/image";
 
 interface CardProps {
@@ -8,12 +7,10 @@ interface CardProps {
   image: any;
 }
 
-
-
 const ProductCard = ({ title, price, image }: CardProps) => {
   
   return (
-    <div className="w-full lg:w-72">
+    <div className="w-full lg:w-72 cursor-pointer">
       <div className="border rounded-md border-primary-100">
         <div className="relative w-full h-72">
           <Image src={image} alt="Product Image" layout="fill" objectFit="cover" unoptimized  />
@@ -43,7 +40,6 @@ const ProductCard = ({ title, price, image }: CardProps) => {
           color="primary"
           label="Add to Cart"
           customClassName="w-full mt-4"
-          // leftIcon = {<CartIcon/>}
         />
       </div>
     </div>
